@@ -6,4 +6,4 @@ data_paths = loadImage.file_path(data_path)
 data_names = loadImage.file_name(data_path)
 #开始弄所有数据
 for i in range(len(data_paths)):
-    Aperture.Aperture(data_paths[0], data_names[0])
+    Aperture.Aperture(data_paths[i], data_names[i])
