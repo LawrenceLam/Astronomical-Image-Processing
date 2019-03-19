@@ -30,7 +30,7 @@ def Aperture(file_path, file_name):
     #减去背景，使用DAOStarfinder查找图像中的恒星，恒星的fwhms大约为3像素，
     # 峰值大约比背景高5西格玛。生成一个包含星体探测器结果的天体表：
     daofind = DAOStarFinder(fwhm=3.0, threshold=5.*std)
-    sources = daofind(image_data)
+    sources = daofind(image_data-median)
     #输出找到的所有星体信息
     print(sources)
     print(type(sources))
@@ -55,3 +55,4 @@ def Aperture(file_path, file_name):
     plt.imshow(image_data, cmap='Greys', origin='lower', norm=norm)
     apertures.plot(color='blue', lw=1.5, alpha=0.5)
     plt.savefig(png_absolute+'/'+file_name+'.png')
+    plt.close()
