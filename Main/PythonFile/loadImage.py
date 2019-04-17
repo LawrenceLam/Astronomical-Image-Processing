@@ -18,4 +18,6 @@ def file_name(file_dir):
         for file in files:
             N.append(file)
     return N
-# path = 'E:\GraduationProject\data\M35_20181113_flatted'
+
+relative_name = file_name('E:/GraduationProject/EPSFThird/txt_data/')
+print(relative_name)
